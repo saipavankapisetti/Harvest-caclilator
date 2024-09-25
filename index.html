@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paddy Harvesting Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Paddy Harvesting Bill Calculator</h1>
+        <form id="harvestForm">
+            <label for="harvesterName">Harvester Name:</label>
+            <select id="harvesterName" required>
+                <option value="" disabled selected>Select a machine</option>
+                <option value="GAM">GAM</option>
+                <option value="QATAR">QATAR</option>
+                <option value="CLASS">CLASS</option>
+                <option value="CROP TIGER">CROP TIGER</option>
+                <option value="KUBOTA">KUBOTA</option>
+                <option value="VISHAL">VISHAL</option>
+            </select>
+
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" required>
+
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" required>
+
+            <label for="hourRate">Hour per Rate:</label>
+            <input type="number" id="hourRate" required>
+
+            <label for="farmerName">Farmer Name:</label>
+            <input type="text" id="farmerName" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" required>
+
+            <label for="village">Village:</label>
+            <input type="text" id="village" required>
+
+            <button type="button" onclick="calculate()">Generate Bill</button>
+        </form>
+
+        <div id="bill" class="bill">
+            <h2>Bill Details</h2>
+            <p id="outputName"></p>
+            <p id="outputPhone"></p>
+            <p id="outputAmount"></p>
+            <p id="outputTime"></p>
+            <button onclick="saveAsImage()">Save as Image</button>
+            <button onclick="shareToWhatsApp()">Share to WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
